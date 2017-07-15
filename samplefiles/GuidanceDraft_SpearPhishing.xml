@@ -1,0 +1,170 @@
+<IODEF-Document version="2.00"
+                xmlns="urn:ietf:params:xml:ns:iodef-2.0"
+                xmlns:iodef="urn:ietf:params:xml:ns:iodef-2.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <iodef:Incident purpose="reporting">
+    <iodef:IncidentID name="csirt.example.com">
+      189601
+    </iodef:IncidentID>
+    <iodef:DetectTime>2013-01-04T08:06:12+00:00</iodef:DetectTime>
+    <iodef:StartTime>2013-01-04T08:01:34+00:00</iodef:StartTime>
+    <iodef:EndTime>2013-01-04T08:31:27+00:00</iodef:EndTime>
+    <iodef:ReportTime>2013-01-04T09:15:45+00:00</iodef:ReportTime>
+    <iodef:GenerationTime>2013-01-04T09:15:45+00:00</iodef:GenerationTime>
+    <iodef:Description>
+      Zeus Spear Phishing E-mail with Malware Attachment
+    </iodef:Description>
+    <iodef:Assessment occurrence="potential">
+      <iodef:SystemImpact severity="medium" type="takeover-system">
+        <iodef:Description>
+          Malware with Command and Control Server and System Changes
+        </iodef:Description>
+      </iodef:SystemImpact>
+    </iodef:Assessment>
+    <iodef:Contact role="creator" type="organization">
+      <iodef:ContactName>example.com CSIRT</iodef:ContactName>
+      <iodef:Email>
+        <iodef:EmailTo>contact@csirt.example.com</iodef:EmailTo>
+        </iodef:Email>
+    </iodef:Contact>
+    <iodef:EventData>
+      <iodef:Description>
+        Targeting Defense Contractors,
+        specifically board members attending Dummy Con
+      </iodef:Description>
+      <iodef:Method>
+        <iodef:Reference observable-id="ref-1234">
+          <iodef:Description>Zeus</iodef:Description>
+        </iodef:Reference>
+      </iodef:Method>
+      <iodef:Flow>
+        <iodef:System category="source">
+          <iodef:Node>
+            <iodef:Address category="site-uri">
+              http://www.zeusevil.example.com
+            </iodef:Address>
+            <iodef:Address category="ipv4-addr">
+              192.0.2.166
+            </iodef:Address>
+            <iodef:Address category="asn">
+              65535
+            </iodef:Address>
+            <iodef:Address category="ext-value"
+                           ext-category="as-name">
+              EXAMPLE-AS - University of Example"
+            </iodef:Address>
+            <iodef:Address category="ext-value"
+                           ext-category="as-prefix">
+              192.0.2.0/24
+            </iodef:Address>
+          </iodef:Node>
+          <iodef:NodeRole category="malware-distribution"/>
+        </iodef:System>
+      </iodef:Flow>
+      <iodef:Flow>
+        <iodef:System category="source">
+          <iodef:Node>
+            <iodef:DomainData>
+              <iodef:Name>mail1.evildave.example.com</iodef:Name>
+            </iodef:DomainData>
+            <iodef:Address category="ipv4-addr">
+              198.51.100.6
+            </iodef:Address>
+            <iodef:Address category="asn">
+              65534
+            </iodef:Address>
+            <iodef:Address category="ext-value"
+                           ext-category="as-name">
+              EXAMPLE-AS - University of Example
+            </iodef:Address>
+            <iodef:DomainData>
+              <iodef:Name>evildave.example.com</iodef:Name>
+              <iodef:DateDomainWasChecked>2013-01-04T09:10:24+00:00
+              </iodef:DateDomainWasChecked>
+              <!-- <iodef:RelatedDNS RecordType="MX"> -->
+              <iodef:RelatedDNS dtype="string">
+                evildave.example.com MX prefernce = 10, mail exchanger
+                = mail1.evildave.example.com
+              </iodef:RelatedDNS>
+              <iodef:RelatedDNS dtype="string">
+                mail1.evildave.example.com
+                internet address = 198.51.100.6
+              </iodef:RelatedDNS>
+              <iodef:RelatedDNS dtype="string">
+                zuesevil.example.com. IN TXT \"v=spf1 a mx -all\"
+              </iodef:RelatedDNS>
+            </iodef:DomainData>
+          </iodef:Node>
+          <iodef:NodeRole category="mail">
+            <iodef:Description>
+              Sending phishing mails
+            </iodef:Description>
+          </iodef:NodeRole>
+          <iodef:Service>
+            <iodef:EmailData>
+              <iodef:EmailFrom>
+                emaildave@evildave.example.com
+              </iodef:EmailFrom>
+              <iodef:EmailSubject>
+                Join us at Dummy Con
+              </iodef:EmailSubject>
+              <iodef:EmailX-Mailer>
+                StormRider 4.0
+              </iodef:EmailX-Mailer>
+            </iodef:EmailData>
+          </iodef:Service>
+        </iodef:System>
+        <iodef:System category="target">
+          <iodef:Node>
+            <iodef:Address category="ipv4-addr">
+              203.0.113.2
+            </iodef:Address>
+          </iodef:Node>
+        </iodef:System>
+      </iodef:Flow>
+      <iodef:Expectation action="other"/>
+      <iodef:Record>
+        <iodef:RecordData>
+          <iodef:FileData observable-id="fd-1234">
+            <iodef:File>
+              <iodef:FileName>
+                Dummy Con Sign Up Sheet.txt
+              </iodef:FileName>
+              <iodef:FileSize>
+                152
+              </iodef:FileSize>
+              <iodef:HashData scope="file-contents">
+                <iodef:Hash>
+                  <ds:DigestMethod
+                          Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                  <ds:DigestValue>
+                    141accec23e7e5157de60853cb1e01bc38042d
+                    08f9086040815300b7fe75c184
+                  </ds:DigestValue>
+                </iodef:Hash>
+              </iodef:HashData>
+            </iodef:File>
+          </iodef:FileData>
+        </iodef:RecordData>
+        <iodef:RecordData>
+          <iodef:CertificateData>
+            <iodef:Certificate>
+              <ds:X509Data>
+                <ds:X509IssuerSerial>
+                  <ds:X509IssuerName>FakeCA
+                  </ds:X509IssuerName>
+                  <ds:X509SerialNumber>
+                    57482937101
+                  </ds:X509SerialNumber>
+                </ds:X509IssuerSerial>
+                <ds:X509SubjectName>EvilDaveExample
+                </ds:X509SubjectName>
+              </ds:X509Data>
+            </iodef:Certificate>
+          </iodef:CertificateData>
+        </iodef:RecordData>
+      </iodef:Record>
+    </iodef:EventData>
+  </iodef:Incident>
+</IODEF-Document>

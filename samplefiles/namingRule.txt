@@ -1,0 +1,9 @@
+[information source]-[topic]-[serial number]
+
+information source: the source of the example. It could be an organization, individual, or document.
+
+examples:
+
+nict-darknet-01.xml
+
+

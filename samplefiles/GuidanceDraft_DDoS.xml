@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IODEF-Document version="2.00"
+                xmlns="urn:ietf:params:xml:ns:iodef-2.0"
+                xmlns:iodef="urn:ietf:params:xml:ns:iodef-2.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <iodef:Incident purpose="reporting" restriction="default">
+    <iodef:IncidentID name="csirt.example.com">
+      189701
+    </iodef:IncidentID>
+    <iodef:DetectTime>2013-02-05T01:15:45+00:00</iodef:DetectTime>
+    <iodef:StartTime>2013-02-05T00:34:45+00:00</iodef:StartTime>
+    <iodef:ReportTime>2013-02-05T01:34:45+00:00</iodef:ReportTime>
+    <iodef:GenerationTime>2013-02-05T01:15:45+00:00</iodef:GenerationTime>
+    <iodef:Description>DDoS Traffic Seen</iodef:Description>
+    <iodef:Assessment occurrence="actual">
+      <iodef:SystemImpact severity="medium" type="availability-system">
+        <iodef:Description>DDoS Traffic
+        </iodef:Description>
+      </iodef:SystemImpact>
+      <iodef:Confidence rating="high"/>
+    </iodef:Assessment>
+    <iodef:Contact role="creator" type="organization">
+      <iodef:ContactName>Dummy Test</iodef:ContactName>
+      <iodef:Email>
+        <iodef:EmailTo>contact@dummytest.com
+        </iodef:EmailTo>
+      </iodef:Email>
+    </iodef:Contact>
+    <iodef:EventData>
+      <iodef:Description>
+        Dummy Test sharing with ISP1
+      </iodef:Description>
+      <iodef:Method>
+        <iodef:Reference>
+          <iodef:URL>
+            http://blog.spiderlabs.com/2011/01/loic-ddos-
+            analysis-and-detection.html
+          </iodef:URL>
+          <iodef:URL>
+            http://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon
+          </iodef:URL>
+          <iodef:Description>
+            Low Orbit Ion Cannon User Agent
+          </iodef:Description>
+        </iodef:Reference>
+      </iodef:Method>
+      <iodef:Flow>
+        <iodef:System category="source" spoofed="no">
+          <iodef:Node>
+            <iodef:Address category="ipv4-addr">
+              192.0.2.104
+            </iodef:Address>
+          </iodef:Node>
+          <iodef:Service ip-protocol="6">
+            <iodef:Port>1337</iodef:Port>
+          </iodef:Service>
+        </iodef:System>
+        <iodef:System category="source" spoofed="no">
+          <iodef:Node>
+            <iodef:Address category="ipv4-addr">
+              192.0.2.106
+            </iodef:Address>
+          </iodef:Node>
+          <iodef:Service ip-protocol="6">
+            <iodef:Port>1337</iodef:Port>
+          </iodef:Service>
+        </iodef:System>
+        <iodef:System category="source" spoofed="no">
+          <iodef:Node>
+            <iodef:Address category="ipv4-net">
+              198.51.100.0/24
+            </iodef:Address>
+          </iodef:Node>
+          <iodef:Service ip-protocol="6">
+            <iodef:Port>1337</iodef:Port>
+          </iodef:Service>
+        </iodef:System>
+        <iodef:System category="source" spoofed="no">
+          <iodef:Node>
+            <iodef:Address category="ipv6-addr">
+              2001:db8:dead:beef::1
+            </iodef:Address>
+          </iodef:Node>
+          <iodef:Service ip-protocol="6">
+            <iodef:Port>1337</iodef:Port>
+          </iodef:Service>
+        </iodef:System>
+        <iodef:System category="target">
+          <iodef:Node>
+            <iodef:Address category="ipv4-addr">
+              203.0.113.1
+            </iodef:Address>
+          </iodef:Node>
+          <iodef:Service ip-protocol="6">
+            <iodef:Port>80</iodef:Port>
+          </iodef:Service>
+        </iodef:System>
+        <iodef:System category="sensor">
+          <iodef:Node>
+          </iodef:Node>
+          <iodef:Description>
+            Information provided in Flow class instance is from
+            Inspection of traffic from network tap
+          </iodef:Description>
+        </iodef:System>
+      </iodef:Flow>
+      <iodef:Expectation action="other"/>
+    </iodef:EventData>
+    <iodef:IndicatorData>
+      <iodef:Indicator>
+        <iodef:IndicatorID name="csirt.example.com" version="1">
+          G83345941
+        </iodef:IndicatorID>
+        <iodef:Description>
+          User-Agent string
+        </iodef:Description>
+        <iodef:Observable>
+          <iodef:BulkObservable type="http-user-agent">
+            <iodef:BulkObservableList>
+              user-agent="Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12">
+            </iodef:BulkObservableList>
+          </iodef:BulkObservable>
+        </iodef:Observable>
+      </iodef:Indicator>
+    </iodef:IndicatorData>
+  </iodef:Incident>
+</IODEF-Document>

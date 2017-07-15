@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Minimum IODEF document -->
+<IODEF-Document version="2.00" xml:lang="en"
+   xmlns="urn:ietf:params:xml:ns:iodef-2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.iana.org/assignments/xml-registry/schema/iodef-2.0.xsd">
+  <Incident purpose="reporting" restriction="private">
+    <IncidentID name="csirt.example.com">492382</IncidentID>
+    <GenerationTime>2015-07-18T09:00:00-05:00</GenerationTime>
+    <Contact type="organization" role="creator">
+      <Email>
+        <EmailTo>contact@csirt.example.com</EmailTo>
+      </Email>
+    </Contact>
+    <!-- Add more fields to make the document useful -->
+  </Incident>
+</IODEF-Document>

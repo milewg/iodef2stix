@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--   An example of C2 domains from a given campaign. -->
+<!-- A list of C2 domains associated with a campaign -->
+<IODEF-Document version="2.00" xml:lang="en"
+   xmlns="urn:ietf:params:xml:ns:iodef-2.0"
+   xmlns:iodef="urn:ietf:params:xml:ns:iodef-2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation=
+   "http://www.iana.org/assignments/xml-registry/schema/
+    iodef-2.0.xsd">
+  <iodef:Incident purpose="watch" restriction="green">
+    <iodef:IncidentID name="csirt.example.com">897923</iodef:IncidentID>
+      <iodef:RelatedActivity>
+	<iodef:ThreatActor>
+	  <iodef:ThreatActorID>
+	  TA-12-AGGRESSIVE-BUTTERFLY
+	  </iodef:ThreatActorID>
+	  <iodef:Description>Aggressive Butterfly</iodef:Description>
+	</iodef:ThreatActor>
+	<iodef:Campaign>
+	  <iodef:CampaignID>C-2015-59405</iodef:CampaignID>
+	  <iodef:Description>Orange Giraffe</iodef:Description>
+	</iodef:Campaign>
+      </iodef:RelatedActivity>
+      <iodef:GenerationTime>2015-10-02T11:18:00-05:00</iodef:GenerationTime>
+      <iodef:Description>Summarizes the Indicators of Compromise
+	for the Orange Giraffe campaign of the Aggressive
+	Butterfly crime gang.
+      </iodef:Description>
+      <iodef:Assessment>
+	<iodef:BusinessImpact type="breach-proprietary"/>
+      </iodef:Assessment>
+      <iodef:Contact type="organization" role="creator">
+	<iodef:ContactName>CSIRT for example.com</iodef:ContactName>
+	<iodef:Email>
+	  <iodef:EmailTo>contact@csirt.example.com</iodef:EmailTo>
+	</iodef:Email>
+      </iodef:Contact>
+      <iodef:IndicatorData>
+	<iodef:Indicator>
+	  <iodef:IndicatorID name="csirt.example.com" version="1">
+	  G90823490
+	  </iodef:IndicatorID>
+	  <iodef:Description>C2 domains</iodef:Description>
+	  <iodef:StartTime>2014-12-02T11:18:00-05:00</iodef:StartTime>
+	  <iodef:Observable>
+	    <iodef:BulkObservable type="ext-value" ext-type="fqdn">
+	    <iodef:BulkObservableList>
+	      kj290023j09r34.example.com
+	      09ijk23jfj0k8.example.net
+	      klknjwfjiowjefr923.example.org
+	      oimireik79msd.example.org
+	    </iodef:BulkObservableList>
+	  </iodef:BulkObservable>
+	</iodef:Observable>
+      </iodef:Indicator>
+    </iodef:IndicatorData>
+  </iodef:Incident>
+</IODEF-Document>
